@@ -12,6 +12,7 @@ if Lib then
 else
 	return
 end
+local IsClassic = (_G.WOW_PROJECT_ID == _G.WOW_PROJECT_CLASSIC)
 
 
 --[[ User API ]]--
@@ -76,6 +77,9 @@ elseif IsAddOnLoaded('Wardrobe') then
 
 else
 	function Lib:BelongsToSet(id, search)
+		if IsClassic then	--[[ TODO: Can we know this without calling new API? ]]
+			return false
+		end
 		for i, setID in pairs(C_EquipmentSet.GetEquipmentSetIDs()) do
 			local name = C_EquipmentSet.GetEquipmentSetInfo(setID)
 			if Search:Find(search, name) then
@@ -226,6 +230,7 @@ Lib.Filters.artifact = {
 	end
 }
 
+if not IsClassic then
 Lib.Filters.azerite = {
 	keyword = C_CurrencyInfo.GetBasicCurrencyInfo(C_CurrencyInfo.GetAzeriteCurrencyID()).name:lower(),
 
@@ -237,7 +242,7 @@ Lib.Filters.azerite = {
 		return C_AzeriteItem.IsAzeriteItemByID(link) or C_AzeriteEmpoweredItem.IsAzeriteEmpoweredItemByID(link)
 	end
 }
-
+end
 
 --[[ Tooltips ]]--
 
