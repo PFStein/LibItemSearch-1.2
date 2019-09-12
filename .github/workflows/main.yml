@@ -15,3 +15,4 @@ jobs:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           source_file: "LibItemSearch-1.2.lua"
           extraction_regex: "LibStub:NewLibrary\\(['\\s]+LibItemSearch-1.2['\\s]+,\\s*(\\d+)\\)"
+          tag_format: "1.2.{version}"
