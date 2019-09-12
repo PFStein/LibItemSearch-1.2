@@ -2,8 +2,6 @@ name: tag
 
 on:
   push:
-    paths:
-      - LibItemSearch-1.2.lua
     branches:
       - master
 
