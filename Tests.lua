@@ -1,6 +1,4 @@
-if not WoWUnit then
-  return
-end
+if not WoWUnit then return end
 
 local Search =  LibStub('LibItemSearch-1.2')
 local Tests = WoWUnit('LibItemSearch-1.2')
