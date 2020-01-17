@@ -1,7 +1,7 @@
-if not WoWUnit then return end
+local Tests = WoWUnit and WoWUnit('LibItemSearch-1.2')
+if not Tests then return end
 
 local Search =  LibStub('LibItemSearch-1.2')
-local Tests = WoWUnit('LibItemSearch-1.2')
 local IsTrue = WoWUnit.IsTrue
 
 if C_ArtifactUI then
