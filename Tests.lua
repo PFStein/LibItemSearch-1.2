@@ -1,4 +1,4 @@
-local Tests = WoWUnit and WoWUnit('LibItemSearch-1.2')
+local Tests = WoWUnit and WoWUnit('LibItemSearch-1.2', 'GET_ITEM_INFO_RECEIVED')
 if not Tests then return end
 
 local Search =  LibStub('LibItemSearch-1.2')
